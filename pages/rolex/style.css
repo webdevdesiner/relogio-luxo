@@ -118,25 +118,6 @@ header {
   cursor: pointer;
 }
 
-.hero {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 10px;
-  background: linear-gradient(180deg, #000B08 0%, #003025 50%, #000B08 100%);
-}
-
-.hero img {
-  max-width: 100%;
-  height: auto;
-}
-
-.hero-text h1 {
-  font-family: 'Playfair Display', serif;
-  font-size: 48px;
-  color: #D4AF37;
-}
-
 .btn {
   display: inline-block;
   padding: 10px 20px;
@@ -152,6 +133,7 @@ header {
 
 .produtos h2{
   margin-bottom: 30px;
+  /* color: #f7d76f; */
 }
 
 .produtos, .conceito {
@@ -213,25 +195,27 @@ header {
   gap: 20px;
 }
 
-.conceito {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 30px;
-  background-color: #003A27;
+
+
+.btn-voltar {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #8D550A;
+  color: #ffffff;
+  padding: 10px 15px;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: bold;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.7);
+  transition: background 0.3s;
+  z-index: 2000;
 }
 
-.conceito-img img {
-  max-width: 100%;
-  border-radius: 10px;
+.btn-voltar:hover {
+  background-color: #D4AF37;
 }
 
-footer {
-  text-align: center;
-  padding: 20px;
-  background-color: #031f17;
-  color: #888;
-  font-size: 14px;
-}
 
 @media (min-width: 600px) {
   .hero img {
