@@ -137,6 +137,45 @@ header {
   color: #D4AF37;
 }
 
+/* area sobre */
+.sobre {
+  padding: 50px 20px;
+  background-color: #0D3B2E;
+  text-align: center;
+  color: #f7f7f7;
+}
+
+.sobre h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 32px;
+  color: #D4AF37;
+  margin-bottom: 20px;
+}
+
+.sobre p {
+  max-width: 800px;
+  margin: 10px auto;
+  font-size: 16px;
+  line-height: 1.6;
+  color: #ccc;
+}
+
+.sobre .btn {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: #8D550A;
+  color: #ffffff;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background 0.3s;
+}
+
+.sobre .btn:hover {
+  background-color: #D4AF37;
+}
+
+
 .btn {
   display: inline-block;
   padding: 10px 20px;
