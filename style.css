@@ -150,6 +150,10 @@ header {
   background-color: #D4AF37;
 }
 
+.produtos h2{
+  margin-bottom: 30px;
+}
+
 .produtos, .conceito {
   padding: 20px;
   text-align: center;
