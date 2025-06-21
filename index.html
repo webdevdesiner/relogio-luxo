@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Relógios de Luxo</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Open+Sans&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+
+  <header class="header">
+    <div class="areaLogo">
+      <img src="assets/logoPremier.png" alt="Logo" class="logo-img">
+      <div class="logo-text">Relógios Premier</div>
+    </div>
+    <div class="logos-marcas">
+      <img src="assets/RolexLogo.png" alt="Rolex">
+      <img src="assets/TagHuerLogo.png" alt="TAG Heuer">
+      <img src="assets/DieselLogo.png" alt="Omega">
+      <p><a href="#footer">footer</a></p>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="hero-text">
+      <h1>Relógios de Luxo</h1>
+      <p>Conheça a nossa coleção exclusiva de relógios das marcas mais desejadas do mundo.</p>
+      <a href="#" class="btn">Conheça a Coleção</a>
+    </div>
+    <div class="hero-img">
+      <img src="assets/Ativo 3rolex1.png" alt="Relógio Destaque">
+    </div>
+  </section>
+
+  <section class="marcas">
+    <h2>Marcas em Destaque</h2>
+    <div class="logos-marcas">
+      <img src="assets/RolexLogo.png" alt="Rolex">
+      <img src="assets/TagHuerLogo.png" alt="TAG Heuer">
+      <img src="assets/DieselLogo.png" alt="Omega">
+      <img src="assets/RolexLogo.png" alt="Rolex">
+      <img src="assets/TagHuerLogo.png" alt="TAG Heuer">
+      <img src="assets/RolexLogo.png" alt="Rolex">
+
+
+
+    </div>
+  </section>
+
+  <section class="produtos">
+    <h2>Produtos em Destaque</h2>
+    <div class="grid-produtos">
+
+      <div class="produto-card">
+        <img src="assets/Ativo 3rolex1.png" alt="Rolex Submariner Date">
+        <h3>Rolex Submariner Date</h3>
+        <p class="preco">R$ 72.000</p>
+
+        <div class="detalhes">
+          <p><strong>Marca:</strong> Rolex</p>
+          <p><strong>Diâmetro:</strong> 41mm</p>
+          <p><strong>Material:</strong> Aço Oystersteel</p>
+          <p><strong>Movimento:</strong> Automático (Calibre 3235)</p>
+          <p><strong>Extras:</strong> Safira, Bezel cerâmico</p>
+        </div>
+
+        <button class="ver-mais">Ver mais</button>
+      </div>
+
+
+
+
+
+    </div>
+  </section>
+
+  <section class="conceito">
+    <div class="conceito-img">
+      <img src="assets/experiencia2.jpeg" alt="Experiência">
+    </div>
+    <div class="conceito-texto">
+      <h2>Experiência e Conceito</h2>
+      <p>Mais que relógios, oferecemos uma experiência única e um conceito de elegância atemporal.</p>
+    </div>
+  </section>
+
+  <footer id="footer">
+    <p>&copy; 2025 Relógios de luxo. Todos os direitos reservados. spx - desenvolvimentos</p>
+  </footer>
+
+  <script>
+
+    document.addEventListener('DOMContentLoaded', function() {
+     
+    
+
+    let lastScrollTop = 0;
+const header = document.querySelector('header');
+
+window.addEventListener('scroll', function() {
+  let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+  if (scrollTop > lastScrollTop && scrollTop > 50) {
+    // Rolando para baixo e já passou de 50px
+    header.classList.add('header-hide');
+  } else if (scrollTop < lastScrollTop) {
+    // Rolando para cima
+    header.classList.remove('header-hide');
+  }
+
+  lastScrollTop = scrollTop <= 0 ? 0 : scrollTop; // Evita negativos
+});
+// Adiciona um evento de clique para fechar o menu ao clicar fora dele
+document.addEventListener('click', function(event) {
+  const menu = document.querySelector('.menu');
+  if (!menu.contains(event.target)) {
+    menu.classList.remove('menu-open');
+  }
+});
+
+
+function toggleMarcas() {
+    const container = document.querySelector('.mais-marcas');
+    container.classList.toggle('show');
+}
+
+ const botoes = document.querySelectorAll('.ver-mais');
+
+  botoes.forEach(botao => {
+    botao.addEventListener('click', () => {
+      const detalhes = botao.previousElementSibling; // pega a div .detalhes antes do botão
+      detalhes.style.display = (detalhes.style.display === 'block') ? 'none' : 'block';
+      botao.textContent = (detalhes.style.display === 'block') ? 'Ver menos' : 'Ver mais';
+    });
+  });
+
+  });
+  </script>
+
+</body>
+
+</html>
