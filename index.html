@@ -7,11 +7,11 @@
   <title>Relógios de Luxo</title>
   <link rel="stylesheet" href="style.css">
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Open+Sans&display=swap" rel="stylesheet">
-
 </head>
 
 <body>
 
+  <!-- Header -->
   <header class="header">
     <div class="areaLogo">
       <img src="assets/logoPremier.png" alt="Logo" class="logo-img">
@@ -20,11 +20,43 @@
     <div class="logos-marcas">
       <img src="assets/RolexLogo.png" alt="Rolex">
       <img src="assets/TagHuerLogo.png" alt="TAG Heuer">
-      <img src="assets/DieselLogo.png" alt="Omega">
-      <p><a href="#footer">footer</a></p>
+      <img src="assets/DieselLogo.png" alt="Diesel">
+      <button class="abrir-menu-marcas">Mais Marcas</button>
     </div>
   </header>
 
+  <!-- Menu Suspenso de Marcas -->
+  <div class="menu-marcas-suspenso" id="menuMarcas">
+    <button class="fechar-menu">X Fechar</button>
+    <h2>Mais Marcas</h2>
+    <div class="marcas-extra">
+      <!-- <img src="assets/RolexLogo.png" alt="?"> -->
+
+      <p>Rolex</p>
+      <p>TAG Heuer</p>
+      <p>Diesel</p>
+      <p>Omega</p>
+      <p>Breitling</p>
+      <p>Longines</p>
+      <p>Seiko</p>
+      <p>Casio</p>
+      <p>Citizen</p>
+      <p>Fossil</p>
+      <p>Michael Kors</p>
+      <p>Movado</p>
+      <p>Tissot</p>
+      <p>Bulova</p>
+      <p>Hamilton</p>
+      <p>Montblanc</p>
+      <p>Panerai</p>
+      <p>Tag Heuer</p>
+      <p>Zenith</p>
+      <p>Hublot</p>
+      <p>Cartier</p>
+    </div>
+  </div>
+
+  <!-- Hero -->
   <section class="hero">
     <div class="hero-text">
       <h1>Relógios de Luxo</h1>
@@ -36,21 +68,7 @@
     </div>
   </section>
 
-  <section class="marcas">
-    <h2>Marcas em Destaque</h2>
-    <div class="logos-marcas">
-      <img src="assets/RolexLogo.png" alt="Rolex">
-      <img src="assets/TagHuerLogo.png" alt="TAG Heuer">
-      <img src="assets/DieselLogo.png" alt="Omega">
-      <img src="assets/RolexLogo.png" alt="Rolex">
-      <img src="assets/TagHuerLogo.png" alt="TAG Heuer">
-      <img src="assets/RolexLogo.png" alt="Rolex">
-
-
-
-    </div>
-  </section>
-
+  <!-- Produtos -->
   <section class="produtos">
     <h2>Produtos em Destaque</h2>
     <div class="grid-produtos">
@@ -71,13 +89,12 @@
         <button class="ver-mais">Ver mais</button>
       </div>
 
-
-
-
+      <!-- Você pode duplicar o bloco acima para adicionar mais produtos -->
 
     </div>
   </section>
 
+  <!-- Conceito -->
   <section class="conceito">
     <div class="conceito-img">
       <img src="assets/experiencia2.jpeg" alt="Experiência">
@@ -88,59 +105,13 @@
     </div>
   </section>
 
+  <!-- Footer -->
   <footer id="footer">
-    <p>&copy; 2025 Relógios de luxo. Todos os direitos reservados. spx - desenvolvimentos</p>
+    <p>&copy; 2025 Relógios de luxo. Todos os direitos reservados. SPX - Desenvolvimentos</p>
   </footer>
 
-  <script>
-
-    document.addEventListener('DOMContentLoaded', function() {
-     
-    
-
-    let lastScrollTop = 0;
-const header = document.querySelector('header');
-
-window.addEventListener('scroll', function() {
-  let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-
-  if (scrollTop > lastScrollTop && scrollTop > 50) {
-    // Rolando para baixo e já passou de 50px
-    header.classList.add('header-hide');
-  } else if (scrollTop < lastScrollTop) {
-    // Rolando para cima
-    header.classList.remove('header-hide');
-  }
-
-  lastScrollTop = scrollTop <= 0 ? 0 : scrollTop; // Evita negativos
-});
-// Adiciona um evento de clique para fechar o menu ao clicar fora dele
-document.addEventListener('click', function(event) {
-  const menu = document.querySelector('.menu');
-  if (!menu.contains(event.target)) {
-    menu.classList.remove('menu-open');
-  }
-});
-
-
-function toggleMarcas() {
-    const container = document.querySelector('.mais-marcas');
-    container.classList.toggle('show');
-}
-
- const botoes = document.querySelectorAll('.ver-mais');
-
-  botoes.forEach(botao => {
-    botao.addEventListener('click', () => {
-      const detalhes = botao.previousElementSibling; // pega a div .detalhes antes do botão
-      detalhes.style.display = (detalhes.style.display === 'block') ? 'none' : 'block';
-      botao.textContent = (detalhes.style.display === 'block') ? 'Ver menos' : 'Ver mais';
-    });
-  });
-
-  });
-  </script>
-
+  <!-- JS -->
+  <script src="script.js"></script>
 </body>
 
 </html>
