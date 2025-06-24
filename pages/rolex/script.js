@@ -3,51 +3,7 @@ document.addEventListener('DOMContentLoaded', function() {
   let lastScrollTop = 0;
   const header = document.querySelector('header');
 
-
-  const container = document.querySelectorAll('.coresDisponivel');
-
-container.forEach((scrollArea) => {
-  let isDown = false;
-  let startX;
-  let scrollLeft;
-
-  scrollArea.addEventListener('mousedown', (e) => {
-    isDown = true;
-    scrollArea.classList.add('active');
-    startX = e.pageX - scrollArea.offsetLeft;
-    scrollLeft = scrollArea.scrollLeft;
-  });
-
-  scrollArea.addEventListener('mouseleave', () => {
-    isDown = false;
-    scrollArea.classList.remove('active');
-  });
-
-  scrollArea.addEventListener('mouseup', () => {
-    isDown = false;
-    scrollArea.classList.remove('active');
-  });
-
-  scrollArea.addEventListener('mousemove', (e) => {
-    if (!isDown) return;
-    e.preventDefault();
-    const x = e.pageX - scrollArea.offsetLeft;
-    const walk = (x - startX) * 1.5; // Velocidade do arraste
-    scrollArea.scrollLeft = scrollLeft - walk;
-  });
-});
-
-function scrollCores(button, direction) {
-  const container = button.parentElement.querySelector('.coresDisponivel');
-  const scrollAmount = container.clientWidth; // Rola uma imagem por vez (largura do container)
-
-  container.scrollBy({
-    left: direction * scrollAmount,
-    behavior: 'smooth'
-  });
-}
-
-
+  
   window.addEventListener('scroll', function() {
     let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
     if (scrollTop > lastScrollTop && scrollTop > 50) {
