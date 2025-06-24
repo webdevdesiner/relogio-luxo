@@ -118,19 +118,10 @@ header {
   cursor: pointer;
 }
 
-.btn {
-  display: inline-block;
-  padding: 10px 20px;
-  background-color: #8D550A;
-  color: white;
-  border-radius: 5px;
-  text-decoration: none;
-}
 
-.btn:hover {
-  background-color: #D4AF37;
-}
 
+
+/* Estilos para a seção de produtos - card */
 .produtos h2{
   margin-bottom: 30px;
   /* color: #f7d76f; */
@@ -195,7 +186,36 @@ header {
   gap: 20px;
 }
 
+/* Scroll das cores de cada modelo */
+.coresDisponivel {
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;  /* Faz o "snap" parar uma imagem por vez */
+  gap: 10px;
+  margin-bottom: 10px;
+}
 
+.coresDisponivel img {
+  min-width: 100%;                /* Faz cada imagem ocupar 100% do container */
+  height: auto;
+  border-radius: 10px;
+  scroll-snap-align: center;       /* Faz o snap alinhar ao centro da viewport */
+  transition: transform 0.3s;
+  flex-shrink: 0;
+}
+
+/* Opcional: esconder a scrollbar */
+.coresDisponivel::-webkit-scrollbar {
+  display: none;
+}
+.coresDisponivel {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+
+
+/* fim scrol de cores */
 
 .btn-voltar {
   position: fixed;
