@@ -187,30 +187,64 @@ header {
 }
 
 /* Scroll das cores de cada modelo */
+
+.coresDisponivel-wrapper {
+  position: relative;
+  overflow: hidden;
+}
+
 .coresDisponivel {
   display: flex;
   overflow-x: auto;
-  scroll-snap-type: x mandatory;  /* Faz o "snap" parar uma imagem por vez */
+  scroll-snap-type: x mandatory;
   gap: 10px;
-  margin-bottom: 10px;
+  scroll-behavior: smooth;
+  padding-bottom: 5px;
 }
 
 .coresDisponivel img {
-  min-width: 100%;                /* Faz cada imagem ocupar 100% do container */
+  min-width: 100%;
   height: auto;
   border-radius: 10px;
-  scroll-snap-align: center;       /* Faz o snap alinhar ao centro da viewport */
-  transition: transform 0.3s;
+  scroll-snap-align: center;
   flex-shrink: 0;
 }
 
-/* Opcional: esconder a scrollbar */
-.coresDisponivel::-webkit-scrollbar {
-  display: none;
+.scroll-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  cursor: pointer;
+  z-index: 10;
+  border-radius: 5px;
+  transition: background 0.3s;
+}
+
+.scroll-btn.left {
+  left: 10px;
+}
+
+.scroll-btn.right {
+  right: 10px;
+}
+
+.scroll-btn:hover {
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
+
+/* aqui é para grab da tela - simular mobile */
+
+.coresDisponivel.active {
+  cursor: grabbing;
+  cursor: -webkit-grabbing;
 }
 .coresDisponivel {
-  -ms-overflow-style: none;
-  scrollbar-width: none;
+  cursor: grab;
 }
 
 
